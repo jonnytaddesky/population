@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "env/bin/python",
+    
+    "editor.formatOnSave": false,
+    
+    // Enable per-language
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "git.ignoreLimitWarning": true
+}
