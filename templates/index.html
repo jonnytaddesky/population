@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Аналітична веб система перепису населення</title>
+        <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='styles.css')}}">
+        <link rel="stylesheet "type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <div class="btn-group btn-group-justified">
+                <a href="{{url_for('index')}}" class="btn btn-primary">Головне меню</a>
+                <a href="{{url_for('sign_up')}}" class="btn btn-primary">Реєстрація</a>
+                <a href="{{url_for('search')}}"  class="btn btn-primary">Пошук</a>
+                <a href="{{url_for('statistic')}}"  class="btn btn-primary">Статистика</a>
+            </div>
+            <div class="jumbotron text-center">
+                <h1>
+                    Вас вітає інформаційно-аналітична web-система перепису населення</br>
+                    Студентки ФОАІС, 5 курсу, 2 групи</br>
+                    Балашової Аліни
+                </h1>
+                <h2>
+                    Загальні положення щодо</br> 
+                    інформаційно-аналітичної Web-системи перепису населення
+                </h2> 
+            </div>
+        </div>
+    </body>
+</html>
