@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Реєстрація</title>
+        {% include "header.html" %}
+    </head>
+    <body>
+        <div>
+            {% block navbar %}
+            {% set active = 'sign_up' %}
+            {% include "navbar.html" with context %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

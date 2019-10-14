@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Пошук</title>
+        {% include "header.html" %}
+    </head>
+    <body>
+        <div>
+            {% block navbar %}
+            {% set active = 'search' %}
+            {% include "navbar.html" with context %}
+            {% endblock %}
+        </div>
+        <div>
+            <ul id="dynamic-list"></ul>
+
+            <input type="text" id="candidate"/>
+            <button onclick="addItem()">add item</button>
+            <button onclick="removeItem()">remove item</button>
+
+            <script>
+                function addItem() {
+                    var ul = document.getElementById("dynamic-list");
+                    var candidate = document.getElementById("candidate");
+                    var li = document.createElement("li");
+                    li.setAttribute('id',candidate.value);
+                    li.appendChild(document.createTextNode(candidate.value));
+                    ul.appendChild(li);
+                }
+
+                function removeItem() {
+                    var ul = document.getElementById("dynamic-list");
+                    var candidate = document.getElementById("candidate");
+                    var item = document.getElementById(candidate.value);
+                    ul.removeChild(item);
+                }
+            </script>
+        </div>
+    </body>
+</html>

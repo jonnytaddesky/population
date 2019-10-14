@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Статистика</title>
+        {% include "header.html" %}
+    </head>
+    <body>
+        <div>
+            {% block navbar %}
+            {% set active = 'statistics' %}
+            {% include "navbar.html" with context %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
