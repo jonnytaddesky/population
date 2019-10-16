@@ -4,22 +4,95 @@
         {% include "header.html" %}
     </head>
     <body>
-        <div>
-            {% block navbar %}
-            {% set active = 'index' %}
-            {% include "navbar.html" with context %}
-            {% endblock %}
-            <div class="jumbotron justify-content-center">
-                <h1>
-                    Вас вітає інформаційно-аналітична web-система перепису населення</br>
-                    Студентки ФОАІС, 5 курсу, 2 групи</br>
-                    Балашової Аліни
-                </h1>
-                <h2>
-                    Загальні положення щодо</br>
-                    інформаційно-аналітичної Web-системи перепису населення
-                </h2>
+        {% block navbar %}
+        {% set active = 'index' %}
+        {% include "navbar.html" with context %}
+        {% endblock %}
+        <style>
+          /* Make the image fully responsive */
+          .carousel-inner {
+              width: 100%;
+              height: 550px;
+          }
+          .jumbotron {
+            background: white;
+          }
+          .problem {
+            text-align: left;
+            padding-left: 60px;
+          }
+          .problem-2 {
+            text-align: left;
+            padding-left: 200px;
+          }
+          .second_page {
+            text-align: left;
+            padding-left: 100px;
+          }
+          .third_page {
+            text-align: left;
+            padding-left: 30px;
+          }
+          </style>
+        </head>
+        <body>
+        
+        <div id="demo" class="carousel slide">
+        
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+          
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="jumbotron text-center" style="margin-bottom:0">
+                    <h1 style="padding-top: 60px">Вас вітає інформаційно-аналітична web-система перепису населення</br>
+                        Студентки ФОАІС, 5 курсу, 2 групи</br>
+                        Балашової Аліни</h1>
+                    <p style="padding-top: 60px">Загальні положення щодо</br>
+                        інформаційно-аналітичної Web-системи перепису населення</p> 
+                </div>
             </div>
+            <div class="carousel-item">
+                <div class="jumbotron text-center" style="margin-bottom:0">
+                    <h1 class="second_page">Мета:</h1>
+                    <h2 class="problem-2">Розробка автоматизованої системи перепису населення</h2>
+                    <br>
+                    <br>      
+                    <h1 class="second_page">Об'єкт дослідження:</h1>
+                    <h2 class="problem-2">Автоматизація процесів обробки даних перепису населення</h2>
+                    <br>
+                    <br>
+                    <h1 class="second_page">Предмет дослідження:</h1>
+                    <h2 class="problem-2">Система перепису населення</h2>  
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="jumbotron text-center" style="margin-bottom:0">
+                    <h1 class="third_page">Задачі:</h1>
+                    <h2 class="problem">- провести аналітичні дослідження механізмів перепису населення;</h2>
+                    <br>
+                    <h2 class="problem">- визначити процедури статистичної обробки інформації з перепису населення;</h2>
+                    <br>
+                    <h2 class="problem">- розробити структуру автоматизованої системи даних перепису населення</h2>
+                    <br>
+                    <h2 class="problem">- розробити модель бази даних</h2>
+                    <br>
+                    <h2 class="problem">- програмна реалізація автоматизованої системи на базі MongoDB</h2>
+                </div>
+            </div>
+          
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
         </div>
     </body>
 </html>

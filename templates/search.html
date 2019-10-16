@@ -1,39 +1,108 @@
 <html>
-    <head>
-        <title>Пошук</title>
-        {% include "header.html" %}
-    </head>
-    <body>
-        <div>
-            {% block navbar %}
-            {% set active = 'search' %}
-            {% include "navbar.html" with context %}
-            {% endblock %}
-        </div>
-        <div>
-            <ul id="dynamic-list"></ul>
+<style>
 
-            <input type="text" id="candidate"/>
-            <button onclick="addItem()">add item</button>
-            <button onclick="removeItem()">remove item</button>
+</style>
 
-            <script>
-                function addItem() {
-                    var ul = document.getElementById("dynamic-list");
-                    var candidate = document.getElementById("candidate");
-                    var li = document.createElement("li");
-                    li.setAttribute('id',candidate.value);
-                    li.appendChild(document.createTextNode(candidate.value));
-                    ul.appendChild(li);
-                }
+<head>
+    <title>Пошук</title>
+    {% include "header.html" %}
+    <style>
+        #dynamic-list {
+            list-style: none;
+        }
+        
+        .text_field {
+            width: 278px;
+        }
+        
+        .button_size {
+            padding-right: 75px;
+        }
+    </style>
+</head>
 
-                function removeItem() {
-                    var ul = document.getElementById("dynamic-list");
-                    var candidate = document.getElementById("candidate");
-                    var item = document.getElementById(candidate.value);
-                    ul.removeChild(item);
-                }
-            </script>
-        </div>
-    </body>
+<body>
+    <div>
+        {% block navbar %} {% set active = 'search' %} {% include "navbar.html" with context %} {% endblock %}
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                <div class="d-flex p-3 bg-white text-black">
+                    <div class="p-2 bg-white">
+                        <ul id="dynamic-list"></ul>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="p-2 bg-warming">
+                    <form>
+                        <div class="input-group mb-3" style="width: 500px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width:150px">Field</span>
+                            </div>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color: #007bff">Dropdown F</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form>
+                        <div class="input-group mb-3" style="width: 500px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width:150px">Operation</span>
+                            </div>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color: #007bff">Dropdown O</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form>
+                        <div class="input-group mb-3" style="width: 500px">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="width:150px">Value</span>
+                            </div>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color: #007bff">Dropdown V</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form>
+                        <div class="input-group mb-3 text_field">
+                            <input type="text" class="form-control" id="candidate" />
+                        </div>
+                        <div class="d-flex flex-row-reverse bg-white button_size">
+                            <div class="p-2 bg-white">
+                                <button onclick="removeItem()" type="button" class="btn btn-success">Search</button>
+                            </div>
+                            <div class="p-2 bg-white">
+                                <button onclick="addItem()" type="button" class="btn btn-primary" style="width: 130px">Add Item</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function addItem() {
+            var ul = $("#dynamic-list");
+            var candidate = $("#candidate");
+            var li = $("<li></li>");
+            // li.addClass('');
+            li.attr('id', candidate.val());
+            li.text((candidate.val()));
+            ul.append(li);
+        }
+
+        function removeItem() {
+            var ul = document.getElementById("dynamic-list");
+            var candidate = document.getElementById("candidate");
+            var item = document.getElementById(candidate.value);
+            ul.removeChild(item);
+        }
+    </script>
+    </div>
+    </div>
+</body>
+
 </html>
