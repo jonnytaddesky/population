@@ -14,7 +14,10 @@ class Database:
         self.collection = self.db[col_name]
 
     def find(self, filters=None):
-        pass
+        print('[Database] Find: filters={}'.format(filters))
+        return True
 
     def insert(self, data):
-        pass
+        print('[Database] Insert: data={}'.format(data))
+        self.collection.insert(data)
+        return True

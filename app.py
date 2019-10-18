@@ -1,8 +1,13 @@
 from flask import Flask, render_template, url_for, jsonify, request
 import datetime
+from database import Database
 
 
 app = Flask(__name__)
+
+
+db = Database('population')
+db.useCollection('users')
 
 
 NOFIELD = '---'
@@ -54,6 +59,7 @@ VALUES = {
                  'інша'],
 }
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -88,6 +94,11 @@ def value_for():
     field = request.args.get('field', NOFIELD, type=str)
     values = [] if field == NOFIELD else VALUES[field]
     return jsonify(values=values)
+
+
+@app.route('/sign_up/__register', methods=['POST'])
+def register():
+    return str(db.insert(dict(request.form)))
 
 
 if __name__ == '__main__':
