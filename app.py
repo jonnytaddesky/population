@@ -59,9 +59,11 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/sign_up')
+@app.route('/sign_up', methods=['GET'])
 def sign_up():
-    return render_template('sign_up.html')
+    return render_template('sign_up.html', sex=VALUES['sex'], birthdayD=VALUES['birthdayD'], birthdayM=VALUES['birthdayM'],
+    birthdayY=VALUES['birthdayY'], citizenship=VALUES['citizenship'], maritalStatus=VALUES['maritalStatus'],
+     education=VALUES['education'], language=VALUES['language'])
 
 
 @app.route('/search')
