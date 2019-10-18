@@ -43,8 +43,8 @@
                     </div>
                     <select class="form-control mdb-select md-form colorful-select dropdown-primary pad" style="padding-right: 5px;" id="field-sex">
                         <option value="sex" selected>---</option>
-                        {% for rec in sex %}
-                        <option value = "{{sex}}">{{rec['sex']}}</option>
+                        {% for sex in sex %}
+                        <option value = "{{recSex}}">{{sex}}</option>
                         {% endfor %}
                     </select>
                     <div class="input-group-prepend" style="padding-left: 5px;">
@@ -52,7 +52,7 @@
                     </div>
                     <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-birthdayD">
                         <option value="birthdayD" selected>---</option>
-                        {% for recBirthdayD in birthdayD %}
+                        {% for birthdayD in birthdayD %}
                         <option value = "{{recBirthdayD}}">{{birthdayD}}</option>
                         {% endfor %}
                     </select>
@@ -64,7 +64,7 @@
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-birthdayM">
                     <option value="birthdayM" selected>---</option>
-                    {% for recBirthdayM in birthdayM %}
+                    {% for birthdayM in birthdayM %}
                     <option value = "{{recBirthdayM}}">{{birthdayM}}</option>
                     {% endfor %}
                 </select>
@@ -72,7 +72,7 @@
                     <div class="input-group-text" style="width: 170px; justify-content: center;">Рік народження</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-birthdayY">
-                    <option value="birthdayY" selected></option>
+                    <option value="birthdayY" selected>---</option>
                     {% for birthdayY in birthdayY %}
                     <option value = "{{recBirthdayY}}">{{birthdayY}}</option>
                     {% endfor %}
@@ -84,7 +84,7 @@
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-citizenship">
                     <option value="citizenship" selected>---</option>
-                    {% for recCitizenship in citizenship %}
+                    {% for citizenship in citizenship %}
                     <option value = "{{recCitizenship}}">{{citizenship}}</option>
                     {% endfor %}
                 </select>
@@ -93,7 +93,7 @@
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-maritalStatus">
                     <option value="maritalStatus" selected>---</option>
-                    {% for recMaritalStatus in maritalStatus %}
+                    {% for maritalStatus in maritalStatus %}
                     <option value = "{{recMaritalStatus}}">{{maritalStatus}}</option>
                     {% endfor %}
                 </select>
@@ -104,7 +104,7 @@
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-education">
                     <option value="education">---</option>
-                    {% for recEducation in education %}
+                    {% for education in education %}
                     <option value = "{{recEducation}}">{{education}}</option>
                     {% endfor %}
                 </select>
@@ -113,7 +113,7 @@
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-language">
                     <option value="language" selected>---</option>
-                    {% for recLanguage in language %}
+                    {% for language in language %}
                     <option value = "{{recLanguage}}">{{language}}</option>
                     {% endfor %}
                 </select>
