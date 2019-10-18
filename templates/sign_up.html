@@ -2,13 +2,125 @@
     <head>
         <title>Реєстрація</title>
         {% include "header.html" %}
+        <style>
+            .flex-container {
+                display: flex;
+                flex-direction: row;
+            }
+        </style>
     </head>
     <body>
         <div>
+            </div>
+            <div>
             {% block navbar %}
             {% set active = 'sign_up' %}
             {% include "navbar.html" with context %}
             {% endblock %}
         </div>
+            <div class="input-group mb-3" style="padding-left: 8px; width: 320px;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" style="width: 170px">Прізвище</span>
+                </div>
+                <input type="text" class="form-control">
+            </div>
+            <div class="input-group mb-3" style="padding-left: 8px; width: 320px;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" style="width: 170px">Ім'я</span>
+                </div>
+                <input type="text" class="form-control">
+            </div>
+            <div class="input-group mb-3" style="padding-left: 8px; width: 320px;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" style="width: 170px">По-батькові</span>
+                </div>
+                <input type="text" class="form-control">
+            </div>
+        <form>
+            <div class="input mb-3 pad flex-container" style="width: auto; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" style="width: 170px; justify-content: center;">Стать</div>
+                    </div>
+                    <select class="form-control mdb-select md-form colorful-select dropdown-primary pad" style="padding-right: 5px;" id="field-sex">
+                        <option value="sex" selected>---</option>
+                        {% for rec in sex %}
+                        <option value = "{{sex}}">{{rec['sex']}}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="input-group-prepend" style="padding-left: 5px;">
+                        <div class="input-group-text" style="width: 170px; justify-content: center;">День народження</div>
+                    </div>
+                    <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-birthdayD">
+                        <option value="birthdayD" selected>---</option>
+                        {% for recBirthdayD in birthdayD %}
+                        <option value = "{{recBirthdayD}}">{{birthdayD}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" style="width: 170px; justify-content: center;">Місяць народження</div>
+                </div>
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-birthdayM">
+                    <option value="birthdayM" selected>---</option>
+                    {% for recBirthdayM in birthdayM %}
+                    <option value = "{{recBirthdayM}}">{{birthdayM}}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-prepend" style="padding-left: 5px;">
+                    <div class="input-group-text" style="width: 170px; justify-content: center;">Рік народження</div>
+                </div>
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-birthdayY">
+                    <option value="birthdayY" selected></option>
+                    {% for birthdayY in birthdayY %}
+                    <option value = "{{recBirthdayY}}">{{birthdayY}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" style="width: 170px; justify-content: center;">Громадянство</div>
+                </div>
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-citizenship">
+                    <option value="citizenship" selected>---</option>
+                    {% for recCitizenship in citizenship %}
+                    <option value = "{{recCitizenship}}">{{citizenship}}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-prepend" style="padding-left: 5px;">
+                    <div class="input-group-text" style="width: 170px; justify-content: center;">Сімейний стан</div>
+                </div>
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-maritalStatus">
+                    <option value="maritalStatus" selected>---</option>
+                    {% for recMaritalStatus in maritalStatus %}
+                    <option value = "{{recMaritalStatus}}">{{maritalStatus}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" style="width: 170px; justify-content: center;">Освіта</div>
+                </div>
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-education">
+                    <option value="education">---</option>
+                    {% for recEducation in education %}
+                    <option value = "{{recEducation}}">{{education}}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-prepend" style="padding-left: 5px;">
+                    <div class="input-group-text" style="width: 170px; justify-content: center;">Рідна мова</div>
+                </div>
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-language">
+                    <option value="language" selected>---</option>
+                    {% for recLanguage in language %}
+                    <option value = "{{recLanguage}}">{{language}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="p-2 bg-white">
+                <button onclick="addFilter()" type="button" class="btn btn-outline-primary" style="width: 100%">Зарєструватися</button>
+            </div>
+        </form>
     </body>
 </html>
