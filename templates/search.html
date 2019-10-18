@@ -34,11 +34,11 @@
             </td>
             <td>
                 <form>
-                    <div class="input-group mb-3" style="width: 500px">
+                    <div class="input-group mb-3" style="width: 300px">
                         <div class="input-group-prepend">
-                            <div class="input-group-text">Field</div>
+                            <div class="input-group-text">Категорія</div>
                         </div>
-                        <select class="form-control" id="field-select" onchange="fieldChanged()">
+                        <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-select" onchange="fieldChanged()">
                             <option>---</option>
                             <option value="surname">Прізвище</option>
                             <option value="name">Ім'я</option>
@@ -53,23 +53,23 @@
                             <option value="language">Рідна мова</option>
                         </select>
                     </div>
-                    <div class="input-group mb-3" style="width: 500px">
+                    <div class="input-group mb-3" style="width: 300px">
                         <div class="input-group-prepend">
-                            <div class="input-group-text">Operation</div>
+                            <div class="input-group-text">Операція</div>
                         </div>
                         <select class="form-control" id="operation-select">
                             <option>---</option>
                         </select>
                     </div>
-                    <div class="input-group mb-3" style="width: 500px" id="select-group">
+                    <div class="input-group mb-3" style="width: 300px" id="select-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text">Value</div>
+                            <div class="input-group-text">Підкатегорія</div>
                         </div>
                         <select class="form-control" id="value-select">
                             <option>---</option>
                         </select>
                     </div>
-                    <div class="input-group mb-3" style="width: 500px; display: none" id="input-group">
+                    <div class="input-group mb-3" style="width: 300px; display: none" id="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">Value</div>
                         </div>
@@ -77,10 +77,10 @@
                     </div>
                     <div class="d-flex flex-row-reverse bg-white button_size">
                         <div class="p-2 bg-white">
-                            <button type="button" class="btn btn-success">Search</button>
+                            <button type="button" class="btn btn-success">Пошук</button>
                         </div>
                         <div class="p-2 bg-white">
-                            <button onclick="addFilter()" type="button" class="btn btn-primary" style="width: 130px">Add filter</button>
+                            <button onclick="addFilter()" type="button" class="btn btn-primary" style="width: 160px">Додати фільтр</button>
                         </div>
                     </div>
                 </form>
