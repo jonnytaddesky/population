@@ -17,12 +17,10 @@
 </head>
 
 <body>
-    <div>
-        {% block navbar %}
-        {% set active = 'search' %}
-        {% include "navbar.html" with context %}
-        {% endblock %}
-    </div>
+    {% block navbar %}
+    {% set active = 'search' %}
+    {% include "navbar.html" with context %}
+    {% endblock %}
     <table class="table table-bordered">
         <tr>
             <td>

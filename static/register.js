@@ -15,10 +15,14 @@ function register() {
 
     $.post($SCRIPT_ROOT + "/sign_up/__register", user_data, function(data) {
         if (data == "True") {
-            alert("Insertion successful!");
+            $("#modal-title").text("Info");
+            $("#modal-message").text("Insertion successful!");
+            $("#modal").modal();
         }
         else {
-            alert("Insertion failed!");
+            $("#modal-title").text("Error");
+            $("#modal-message").text("Insertion failed!");
+            $("#modal").modal();
         }
     });
 }

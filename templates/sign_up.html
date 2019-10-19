@@ -10,14 +10,11 @@
         </style>
     </head>
     <body>
-        <div>
-            </div>
-            <div>
-            {% block navbar %}
-            {% set active = 'sign_up' %}
-            {% include "navbar.html" with context %}
-            {% endblock %}
-        </div>
+        {% include "modal.html" without context %}
+        {% block navbar %}
+        {% set active = 'sign_up' %}
+        {% include "navbar.html" with context %}
+        {% endblock %}
         <form>
             <div class="input-group mb-3" style="padding-left: 8px; width: 320px;">
                 <div class="input-group-prepend">
