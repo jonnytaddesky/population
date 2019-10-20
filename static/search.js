@@ -30,10 +30,17 @@ function message(title, message) {
 }
 
 var query = {};
+var filter_count = 0;
 
-function removeFilter(name) {
-    $("#filter-list").find(`#${name}-filter`).remove();
-    delete query[name];
+function removeFilter(id, field, oper) {
+    $("#filter-list").find(id).remove();
+
+    delete query[field]["$" + oper];
+    if (jQuery.isEmptyObject(query[field])) {
+        delete query[field];
+    }
+
+    filter_count--;
 }
 
 function fieldChanged() {
@@ -108,29 +115,36 @@ function addFilter() {
 
     var ul = $("#filter-list");
 
-    if (field in query) {
-        ul.find(`#${field}-filter`)
-            .find("#filter-message")
-            .text(`${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}`);
-    } else {
-        var li = $("<li></li>");
-        li.addClass("alert alert-primary d-flex");
-        li.attr("id", `${field}-filter`);
-        li.append(`<div id="filter-message" style="display: innline-block; margin-right: 10px;">${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}</div>`);
-        li.append($("<button/>")
-            .attr({type: "button", onclick: `removeFilter('${field}')`, class: "close"})
-            .html("<span>&times;</span>")
-        );
-
-        ul.append(li);
+    if (field in query && ("$" + oper) in query[field]) {
+        message("Помилка", "Фільтр вже інсує");
+        return;
     }
 
-    query[field] = {};
+    var li = $("<li></li>");
+    li.addClass("alert alert-primary d-flex");
+    li.attr("id", `filter_${filter_count}`);
+    li.append(`<div id="filter-message" style="display: innline-block; margin-right: 10px;">${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}</div>`);
+    li.append($("<button/>")
+        .attr({
+            type: "button",
+            onclick: `removeFilter('#filter_${filter_count}', '${field}', '${oper}')`,
+            class: "close"})
+        .html("<span>&times;</span>")
+    );
+
+    ul.append(li);
+
+    if (!(field in query)) {
+        query[field] = {};
+    }
+
     query[field]["$" + oper] = (
         ["birthdayD", "birthdayY"].includes(field) ?
         parseInt(value, 10) :
         value
     );
+
+    filter_count++;
 }
 
 function search() {
