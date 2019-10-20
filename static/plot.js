@@ -10,7 +10,15 @@ function plot() {
         },
         dataType: "json",
         success: function(data) {
-            Plotly.newPlot("bargraph", data);
+            Plotly.newPlot("histogram", [
+                {
+                    histfunc: "sum",
+                    name: "sum",
+                    x: data["x"],
+                    y: data["y"],
+                    type: "histogram",
+                }
+            ]);
         }
     });
 }

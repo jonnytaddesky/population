@@ -21,3 +21,7 @@ class Database:
         print('[Database] Insert: data={}'.format(data))
         self.collection.insert(data)
         return True
+
+    def aggregate(self, pipeline):
+        print('[Database] Aggregate: pipeline={}'.format(pipeline))
+        return self.collection.aggregate(pipeline)

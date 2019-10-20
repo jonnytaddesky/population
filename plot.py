@@ -6,18 +6,12 @@ import numpy as np
 import json
 
 def create_plot(db, field):
-    N = 40
-    x = np.linspace(0, 1, N)
-    y = np.random.randn(N)
-    df = pd.DataFrame({'x': x, 'y': y})
+    result = db.aggregate([{ "$group": { "_id": "$" + field, "count": { "$sum": 1 }}}])
 
-    data = [
-        go.Bar(
-            x=df['x'],
-            y=df['y']
-        )
-    ]
+    json = { "x": [], "y": [] }
 
-    graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+    for rec in sorted(list(result), key=lambda rec: rec["_id"]):
+        json["x"].append(rec["_id"])
+        json["y"].append(rec["count"])
 
-    return graphJSON
+    return json
