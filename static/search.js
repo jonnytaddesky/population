@@ -27,6 +27,13 @@ function message(title, message) {
     $("#modal").modal();
 }
 
+var query = {};
+
+function removeFilter(name) {
+    $("#filter-list").find(`#${name}-filter`).remove();
+    delete query[name];
+}
+
 function fieldChanged() {
     var field = $("#field-select").val();
 
@@ -47,8 +54,7 @@ function fieldChanged() {
     if (["surname", "name", "lastName"].includes(field)) {
         $("#select-group").hide();
         $("#input-group").show();
-    }
-    else {
+    } else {
         $("#input-group").hide();
         $("#select-group").show();
 
@@ -68,9 +74,6 @@ function fieldChanged() {
     }
 }
 
-var filter_count = 0;
-var query = {};
-
 function addFilter() {
     var field_input = $("#field-select option:selected");
     var oper_input = $("#operation-select");
@@ -78,8 +81,7 @@ function addFilter() {
 
     if ($("#select-group").is(":visible")) {
         value_input = $("#value-select");
-    }
-    else {
+    } else {
         value_input = $("#value-input");
     }
 
@@ -102,26 +104,31 @@ function addFilter() {
         return;
     }
 
+    var ul = $("#filter-list");
+
     if (field in query) {
-        message("Помилка", "Фільтр вже інсує");
-        return;
+        ul.find(`#${field}-filter`)
+            .find("#filter-message")
+            .text(`${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}`);
+    } else {
+        var li = $("<li></li>");
+        li.addClass("alert alert-primary d-flex");
+        li.attr("id", `${field}-filter`);
+        li.append(`<div id="filter-message" style="display: innline-block; margin-right: 10px;">${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}</div>`);
+        li.append($("<button/>")
+            .attr({type: "button", onclick: `removeFilter('${field}')`, class: "close"})
+            .html("<span>&times;</span>")
+        );
+
+        ul.append(li);
     }
 
-    query[field] = {}
+    query[field] = {};
     query[field]["$" + oper] = (
         ["birthdayD", "birthdayY"].includes(field) ?
         parseInt(value, 10) :
         value
     );
-
-    var ul = $("#filter-list");
-
-    var li = $("<li></li>");
-    li.addClass("alert alert-primary");
-    li.attr("id", "filter_" + filter_count++);
-    li.text(`${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}`);
-
-    ul.append(li);
 }
 
 function search() {
