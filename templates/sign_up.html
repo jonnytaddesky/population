@@ -32,14 +32,14 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" style="width: 170px">По-батькові</span>
                 </div>
-                <input id="field-lastname" type="text" class="form-control">
+                <input id="field-lastName" type="text" class="form-control">
             </div>
             <div class="input mb-3 pad flex-container" style="width: auto; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                     <div class="input-group-prepend">
                         <div class="input-group-text" style="width: 170px; justify-content: center;">Стать</div>
                     </div>
                     <select class="form-control mdb-select md-form colorful-select dropdown-primary pad" style="padding-right: 5px;" id="field-sex">
-                        <option value="none">---</option>
+                        <option value="">---</option>
                         {% for sex in sex %}
                         <option value = "{{sex}}">{{sex}}</option>
                         {% endfor %}
@@ -48,7 +48,7 @@
                         <div class="input-group-text" style="width: 170px; justify-content: center;">День народження</div>
                     </div>
                     <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-birthdayD">
-                        <option value="none">---</option>
+                        <option value="">---</option>
                         {% for birthdayD in birthdayD %}
                         <option value = "{{birthdayD}}">{{birthdayD}}</option>
                         {% endfor %}
@@ -60,7 +60,7 @@
                     <div class="input-group-text" style="width: 170px; justify-content: center;">Місяць народження</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-birthdayM">
-                    <option value="none">---</option>
+                    <option value="">---</option>
                     {% for birthdayM in birthdayM %}
                     <option value = "{{birthdayM}}">{{birthdayM}}</option>
                     {% endfor %}
@@ -69,7 +69,7 @@
                     <div class="input-group-text" style="width: 170px; justify-content: center;">Рік народження</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-birthdayY">
-                    <option value="none">---</option>
+                    <option value="">---</option>
                     {% for birthdayY in birthdayY %}
                     <option value = "{{birthdayY}}">{{birthdayY}}</option>
                     {% endfor %}
@@ -80,7 +80,7 @@
                     <div class="input-group-text" style="width: 170px; justify-content: center;">Громадянство</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-citizenship">
-                    <option value="none">---</option>
+                    <option value="">---</option>
                     {% for citizenship in citizenship %}
                     <option value = "{{citizenship}}">{{citizenship}}</option>
                     {% endfor %}
@@ -89,7 +89,7 @@
                     <div class="input-group-text" style="width: 170px; justify-content: center;">Сімейний стан</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-maritalStatus">
-                    <option value="none">---</option>
+                    <option value="">---</option>
                     {% for maritalStatus in maritalStatus %}
                     <option value = "{{maritalStatus}}">{{maritalStatus}}</option>
                     {% endfor %}
@@ -109,7 +109,7 @@
                     <div class="input-group-text" style="width: 170px; justify-content: center;">Рідна мова</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-language">
-                    <option value="none">---</option>
+                    <option value="">---</option>
                     {% for language in language %}
                     <option value = "{{language}}">{{language}}</option>
                     {% endfor %}
