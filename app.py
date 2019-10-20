@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, jsonify, request
 import datetime
 from database import Database
+from plot import create_plot
 
 
 app = Flask(__name__)
@@ -85,6 +86,11 @@ def statistics():
     return render_template('statistics.html')
 
 
+@app.route('/statistics/__plot', methods=['GET'])
+def plot():
+    return create_plot(db, request.args["field"]);
+
+
 @app.route('/search/__operation_for', methods=['GET'])
 def operation_for():
     field = request.args.get('field', "", type=str)
@@ -107,6 +113,7 @@ def register():
 @app.route('/search/__find', methods=['POST'])
 def find():
     return render_template('search_results.html', results=db.find(request.json))
+
 
 if __name__ == '__main__':
     app.run()

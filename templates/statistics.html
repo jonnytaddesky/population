@@ -1,12 +1,47 @@
 <html>
-    <head>
-        <title>Статистика</title>
-        {% include "header.html" %}
-    </head>
-    <body>
-        {% block navbar %}
-        {% set active = 'statistics' %}
-        {% include "navbar.html" with context %}
-        {% endblock %}
-    </body>
+
+<head>
+    <title>Статистика</title>
+    {% include "header.html" %}
+    <script src="{{url_for('static', filename='node_modules/plotly.js-dist/plotly.js')}}"></script>
+</head>
+
+<body>
+    {% block navbar %}
+    {% set active = 'statistics' %}
+    {% include "navbar.html" with context %}
+    {% endblock %}
+    <div class="container">
+        <br/>
+        <form>
+            <div class="input-group mb-3" style="width: 300px">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Категорія</div>
+                </div>
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-select" onchange="plot()">
+                    <option value="">---</option>
+                    <option value="surname">Прізвище</option>
+                    <option value="name">Ім'я</option>
+                    <option value="lastName">По-батькові</option>
+                    <option value="sex">Стать</option>
+                    <option value="birthdayD">День</option>
+                    <option value="birthdayM">Місяць</option>
+                    <option value="birthdayY">Рік</option>
+                    <option value="citizenship">Громадянство</option>
+                    <option value="maritalStatus">Сімейний стан</option>
+                    <option value="education">Освіта</option>
+                    <option value="language">Рідна мова</option>
+                </select>
+            </div>
+        </form>
+        <div class="chart" id="bargraph">
+        </div>
+    </div>
+</body>
+
+<script>
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+<script src="{{url_for('static', filename='plot.js')}}"> </script>
+
 </html>

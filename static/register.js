@@ -1,3 +1,5 @@
+"use strict";
+
 var $FIELDS = {
     "surname": "Прізвище",
     "name": "Ім'я",
