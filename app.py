@@ -10,9 +10,6 @@ db = Database('population')
 db.useCollection('users')
 
 
-NOFIELD = '---'
-
-
 OPERATIONS = {
     'surname': ['eq', 'ne'],
     'name': ['eq', 'ne'],
@@ -84,15 +81,15 @@ def statistics():
 
 @app.route('/search/__operation_for', methods=['GET'])
 def operation_for():
-    field = request.args.get('field', NOFIELD, type=str)
-    operations = [] if field == NOFIELD else OPERATIONS[field]
+    field = request.args.get('field', "", type=str)
+    operations = [] if field == "" else OPERATIONS[field]
     return jsonify(operations=operations)
 
 
 @app.route('/search/__value_for', methods=['GET'])
 def value_for():
-    field = request.args.get('field', NOFIELD, type=str)
-    values = [] if field == NOFIELD else VALUES[field]
+    field = request.args.get('field', "", type=str)
+    values = [] if field == "" else VALUES[field]
     return jsonify(values=values)
 
 

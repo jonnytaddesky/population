@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    {% include "modal.html" without context %}
     {% block navbar %}
     {% set active = 'search' %}
     {% include "navbar.html" with context %}
@@ -37,7 +38,7 @@
                             <div class="input-group-text">Категорія</div>
                         </div>
                         <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-select" onchange="fieldChanged()">
-                            <option value="none">---</option>
+                            <option value="">---</option>
                             <option value="surname">Прізвище</option>
                             <option value="name">Ім'я</option>
                             <option value="lastName">По-батькові</option>
@@ -56,7 +57,7 @@
                             <div class="input-group-text">Операція</div>
                         </div>
                         <select class="form-control" id="operation-select">
-                            <option value="none">---</option>
+                            <option value="">---</option>
                         </select>
                     </div>
                     <div class="input-group mb-3" style="width: 300px" id="select-group">
@@ -64,12 +65,12 @@
                             <div class="input-group-text">Значення</div>
                         </div>
                         <select class="form-control" id="value-select">
-                            <option value="none">---</option>
+                            <option value="">---</option>
                         </select>
                     </div>
                     <div class="input-group mb-3" style="width: 300px; display: none" id="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text">Value</div>
+                            <div class="input-group-text">Значення</div>
                         </div>
                         <input class="form-control" id="value-input"/>
                     </div>

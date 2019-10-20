@@ -1,3 +1,17 @@
+var $FIELDS = {
+    "surname": "Прізвище",
+    "name": "Ім'я",
+    "lastName": "По-батькові",
+    "sex": "Стать",
+    "birthdayD": "День",
+    "birthdayM": "Місяць",
+    "birthdayY": "Рік",
+    "citizenship": "Громадянство",
+    "maritalStatus": "Сімейний стан",
+    "education": "Освіта",
+    "language": "Рідна мова",
+};
+
 var $OP_NAMES = {
     "lt": "<",
     "le": "\u2264",
@@ -7,6 +21,12 @@ var $OP_NAMES = {
     "gt": ">",
 };
 
+function message(title, message) {
+    $("#modal-title").text(title);
+    $("#modal-message").text(message);
+    $("#modal").modal();
+}
+
 function fieldChanged() {
     var field = $("#field-select").val();
 
@@ -15,7 +35,7 @@ function fieldChanged() {
     }, function(data) {
         var select = $("#operation-select");
         select.empty();
-        select.append("<option value=\"none\">---</option>");
+        select.append("<option value=\"\">---</option>");
         data.operations.forEach(function(op) {
             var option = $("<option></option>");
             option.attr("value", op);
@@ -37,7 +57,7 @@ function fieldChanged() {
         }, function(data) {
             var select = $("#value-select");
             select.empty();
-            select.append("<option value=\"none\">---</option>");
+            select.append("<option value=\"\">---</option>");
             data.values.forEach(function(value) {
                 var option = $("<option></option>");
                 option.attr("value", value);
@@ -62,22 +82,22 @@ function addFilter() {
         value_input = $("#value-input");
     }
 
-    var field = field_input.html();
-    var oper = oper_input.val();
-    var value = value_input.val();
+    var field = field_input.val() || null;
+    var oper = oper_input.val() || null;
+    var value = value_input.val() || null;
 
-    if (field == "---") {
-        alert("Будь ласка оберіть поле");
+    if (field == null) {
+        message("Помилка", "Будь ласка оберіть категорію");
         return;
     }
 
-    if (oper == "---") {
-        alert("Будь ласка оберіть операцію");
+    if (oper == null) {
+        message("Помилка", "Будь ласка оберіть операцію");
         return;
     }
 
-    if (value == "---") {
-        alert("Будь ласка оберіть значення фільтру");
+    if (value == null) {
+        message("Помилка", "Будь ласка оберіть значення фільтру");
         return;
     }
 
@@ -86,7 +106,7 @@ function addFilter() {
     var li = $("<li></li>");
     li.addClass("alert alert-primary");
     li.attr("id", "filter_" + filter_count++);
-    li.text(`${field} ${$OP_NAMES[oper]} ${value}`);
+    li.text(`${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}`);
 
     ul.append(li);
 }
