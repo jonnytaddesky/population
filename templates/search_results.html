@@ -1,0 +1,34 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col" class="tr-table">Прізвище</th>
+            <th scope="col" class="tr-table">Ім'я</th>
+            <th scope="col" class="tr-table">По-батькові</th>
+            <th scope="col" class="tr-table">Стать</th>
+            <th scope="col" class="tr-table">День</th>
+            <th scope="col" class="tr-table">Місяць</th>
+            <th scope="col" class="tr-table">Рік</th>
+            <th scope="col" class="tr-table">Громадянство</th>
+            <th scope="col" class="tr-table">Сімейний стан</th>
+            <th scope="col" class="tr-table">Освіта</th>
+            <th scope="col" class="tr-table">Рідна мова</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rec in results %}
+        <tr>
+            <td class="td-table"> {{ rec['surname'] }} </td>
+            <td class="td-table"> {{ rec['name'] }} </td>
+            <td class="td-table"> {{ rec['lastName'] }} </td>
+            <td class="td-table"> {{ rec['sex'] }} </td>
+            <td class="td-table"> {{ rec['birthdayD'] }} </td>
+            <td class="td-table"> {{ rec['birthdayM'] }} </td>
+            <td class="td-table"> {{ rec['birthdayY'] }} </td>
+            <td class="td-table"> {{ rec['citizenship'] }} </td>
+            <td class="td-table"> {{ rec['maritalStatus'] }} </td>
+            <td class="td-table"> {{ rec['education'] }} </td>
+            <td class="td-table"> {{ rec['language'] }} </td> 
+        </tr>
+        {% endfor %} 
+    </tbody>
+</table>

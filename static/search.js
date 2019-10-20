@@ -14,10 +14,10 @@ var $FIELDS = {
 
 var $OP_NAMES = {
     "lt": "<",
-    "le": "\u2264",
+    "lte": "\u2264",
     "eq": "=",
     "ne": "\u2260",
-    "ge": "\u2265",
+    "gte": "\u2265",
     "gt": ">",
 };
 
@@ -69,6 +69,7 @@ function fieldChanged() {
 }
 
 var filter_count = 0;
+var query = {};
 
 function addFilter() {
     var field_input = $("#field-select option:selected");
@@ -101,6 +102,18 @@ function addFilter() {
         return;
     }
 
+    if (field in query) {
+        message("Помилка", "Фільтр вже інсує");
+        return;
+    }
+
+    query[field] = {}
+    query[field]["$" + oper] = (
+        ["birthdayD", "birthdayY"].includes(field) ?
+        parseInt(value, 10) :
+        value
+    );
+
     var ul = $("#filter-list");
 
     var li = $("<li></li>");
@@ -109,4 +122,23 @@ function addFilter() {
     li.text(`${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}`);
 
     ul.append(li);
+}
+
+function search() {
+    $.ajax({
+        url:$SCRIPT_ROOT + "/search/__find",
+        dataType: "json",
+        type: "post",
+        contentType: "application/json",
+        data: JSON.stringify(query),
+        converters: {
+            "text json": true
+        },
+        success: function(data, textStatus, jqXHR) {
+            $("#results").html(data);
+        },
+        error: function(error) {
+            message("Помилка", "Пошук не виконаний");
+        }
+    });
 }

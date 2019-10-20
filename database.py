@@ -15,7 +15,7 @@ class Database:
 
     def find(self, filters=None):
         print('[Database] Find: filters={}'.format(filters))
-        return True
+        return self.collection.find(filters)
 
     def insert(self, data):
         print('[Database] Insert: data={}'.format(data))

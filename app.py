@@ -15,9 +15,9 @@ OPERATIONS = {
     'name': ['eq', 'ne'],
     'lastName': ['eq', 'ne'],
     'sex': ['eq', 'ne'],
-    'birthdayD': ['lt', 'le', 'eq', 'ne', 'ge', 'gt'],
-    'birthdayM': ['lt', 'le', 'eq', 'ne', 'ge', 'gt'],
-    'birthdayY': ['lt', 'le', 'eq', 'ne', 'ge', 'gt'],
+    'birthdayD': ['lt', 'lte', 'eq', 'ne', 'gte', 'gt'],
+    'birthdayM': ['eq', 'ne'],
+    'birthdayY': ['lt', 'lte', 'eq', 'ne', 'gte', 'gt'],
     'citizenship': ['eq', 'ne'],
     'maritalStatus': ['eq', 'ne'],
     'education': ['eq', 'ne'],
@@ -64,9 +64,15 @@ def index():
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
-    return render_template('sign_up.html', sex=VALUES['sex'], birthdayD=VALUES['birthdayD'], birthdayM=VALUES['birthdayM'],
-    birthdayY=VALUES['birthdayY'], citizenship=VALUES['citizenship'], maritalStatus=VALUES['maritalStatus'],
-     education=VALUES['education'], language=VALUES['language'])
+    return render_template('sign_up.html',
+            sex=VALUES['sex'],
+            birthdayD=VALUES['birthdayD'],
+            birthdayM=VALUES['birthdayM'],
+            birthdayY=VALUES['birthdayY'],
+            citizenship=VALUES['citizenship'],
+            maritalStatus=VALUES['maritalStatus'],
+            education=VALUES['education'],
+            language=VALUES['language'])
 
 
 @app.route('/search')
@@ -97,6 +103,10 @@ def value_for():
 def register():
     return str(db.insert(dict(request.form)))
 
+
+@app.route('/search/__find', methods=['POST'])
+def find():
+    return render_template('search_results.html', results=db.find(request.json))
 
 if __name__ == '__main__':
     app.run()
