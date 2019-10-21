@@ -22,71 +22,75 @@
     {% set active = 'search' %}
     {% include "navbar.html" with context %}
     {% endblock %}
-    <table class="table table-bordered">
-        <tr>
-            <td>
-                <div class="d-flex p-3 bg-white text-black">
-                    <div class="p-2 bg-white">
-                        <ul id="filter-list"></ul>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <form>
-                    <div class="input-group mb-3" style="width: 300px">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Категорія</div>
-                        </div>
-                        <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-select" onchange="fieldChanged()">
-                            <option value="">---</option>
-                            <option value="surname">Прізвище</option>
-                            <option value="name">Ім'я</option>
-                            <option value="lastName">По-батькові</option>
-                            <option value="sex">Стать</option>
-                            <option value="birthdayD">День</option>
-                            <option value="birthdayM">Місяць</option>
-                            <option value="birthdayY">Рік</option>
-                            <option value="citizenship">Громадянство</option>
-                            <option value="maritalStatus">Сімейний стан</option>
-                            <option value="education">Освіта</option>
-                            <option value="language">Рідна мова</option>
-                        </select>
-                    </div>
-                    <div class="input-group mb-3" style="width: 300px">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Операція</div>
-                        </div>
-                        <select class="form-control" id="operation-select">
-                            <option value="">---</option>
-                        </select>
-                    </div>
-                    <div class="input-group mb-3" style="width: 300px" id="select-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Значення</div>
-                        </div>
-                        <select class="form-control" id="value-select">
-                            <option value="">---</option>
-                        </select>
-                    </div>
-                    <div class="input-group mb-3" style="width: 300px; display: none" id="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Значення</div>
-                        </div>
-                        <input class="form-control" id="value-input"/>
-                    </div>
-                    <div class="d-flex flex-row-reverse bg-white button_size">
+    <div style="padding: 10px 10px;">
+        <table class="table">
+            <tr>
+                <td>
+                    <div class="d-flex p-3 bg-white text-black">
                         <div class="p-2 bg-white">
-                            <button onclick="search()" type="button" class="btn btn-success">Пошук</button>
-                        </div>
-                        <div class="p-2 bg-white">
-                            <button onclick="addFilter()" type="button" class="btn btn-primary" style="width: 160px">Додати фільтр</button>
+                            <ul id="filter-list"></ul>
                         </div>
                     </div>
-                </form>
-            </td>
-        </tr>
-    </table>
-    <div id="results">
+                </td>
+                <td>
+                    <form>
+                        <div class="input-group mb-3" style="width: 300px">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Категорія</div>
+                            </div>
+                            <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-select" onchange="fieldChanged()">
+                                <option value="">---</option>
+                                <option value="surname">Прізвище</option>
+                                <option value="name">Ім'я</option>
+                                <option value="lastName">По-батькові</option>
+                                <option value="sex">Стать</option>
+                                <option value="birthdayD">День</option>
+                                <option value="birthdayM">Місяць</option>
+                                <option value="birthdayY">Рік</option>
+                                <option value="citizenship">Громадянство</option>
+                                <option value="maritalStatus">Сімейний стан</option>
+                                <option value="education">Освіта</option>
+                                <option value="language">Рідна мова</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3" style="width: 300px">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Операція</div>
+                            </div>
+                            <select class="form-control" id="operation-select">
+                                <option value="">---</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3" style="width: 300px" id="select-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Значення</div>
+                            </div>
+                            <select class="form-control" id="value-select">
+                                <option value="">---</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3" style="width: 300px; display: none" id="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Значення</div>
+                            </div>
+                            <input class="form-control" id="value-input"/>
+                        </div>
+                        <div class="d-flex flex-row-reverse bg-white button_size">
+                            <div class="p-2 bg-white">
+                                <button onclick="search()" type="button" class="btn btn-success">Пошук</button>
+                            </div>
+                            <div class="p-2 bg-white">
+                                <button onclick="addFilter()" type="button" class="btn btn-primary" style="width: 160px">Додати фільтр</button>
+                            </div>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="padding-left: 10px; padding-right: 10px">
+        <div id="results">
+        </div>
     </div>
 </body>
 
