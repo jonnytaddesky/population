@@ -7,6 +7,14 @@
                 display: flex;
                 flex-direction: row;
             }
+            .styles_span {
+                background-color: #ffc107; 
+                color: #007bff;
+            }
+            body {
+            background-image: url(/static/img/main_background.jpg); no-repeat !important;
+            width: auto;
+            }
         </style>
     </head>
     <body>
@@ -18,25 +26,25 @@
         <form style="padding-top: 10px">
             <div class="input-group mb-3" style="padding-left: 8px; width: 320px;">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" style="width: 170px">Прізвище</span>
+                    <span class="input-group-text styles_span" style="width: 170px;">Прізвище</span>
                 </div>
                 <input id="field-surname" type="text" class="form-control">
             </div>
             <div class="input-group mb-3" style="padding-left: 8px; width: 320px;">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" style="width: 170px">Ім'я</span>
+                    <span class="input-group-text styles_span" style="width: 170px;">Ім'я</span>
                 </div>
                 <input id="field-name" type="text" class="form-control">
             </div>
             <div class="input-group mb-3" style="padding-left: 8px; width: 320px;">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" style="width: 170px">По-батькові</span>
+                    <span class="input-group-text styles_span" style="width: 170px">По-батькові</span>
                 </div>
                 <input id="field-lastName" type="text" class="form-control">
             </div>
             <div class="input mb-3 pad flex-container" style="width: auto; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                     <div class="input-group-prepend">
-                        <div class="input-group-text" style="width: 170px; justify-content: center;">Стать</div>
+                        <div class="input-group-text styles_span" style="width: 170px; justify-content: center;">Стать</div>
                     </div>
                     <select class="form-control mdb-select md-form colorful-select dropdown-primary pad" style="padding-right: 5px;" id="field-sex">
                         <option value="">---</option>
@@ -45,7 +53,7 @@
                         {% endfor %}
                     </select>
                     <div class="input-group-prepend" style="padding-left: 5px;">
-                        <div class="input-group-text" style="width: 170px; justify-content: center;">День народження</div>
+                        <div class="input-group-text styles_span" style="width: 170px; justify-content: center;">День народження</div>
                     </div>
                     <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-birthdayD">
                         <option value="">---</option>
@@ -57,7 +65,7 @@
             </div>
             <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                 <div class="input-group-prepend">
-                    <div class="input-group-text" style="width: 170px; justify-content: center;">Місяць народження</div>
+                    <div class="input-group-text styles_span" style="width: 170px; justify-content: center;">Місяць народження</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-birthdayM">
                     <option value="">---</option>
@@ -66,7 +74,7 @@
                     {% endfor %}
                 </select>
                 <div class="input-group-prepend" style="padding-left: 5px;">
-                    <div class="input-group-text" style="width: 170px; justify-content: center;">Рік народження</div>
+                    <div class="input-group-text styles_span" style="width: 170px; justify-content: center;">Рік народження</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-birthdayY">
                     <option value="">---</option>
@@ -77,7 +85,7 @@
             </div>
             <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                 <div class="input-group-prepend">
-                    <div class="input-group-text" style="width: 170px; justify-content: center;">Громадянство</div>
+                    <div class="input-group-text styles_span" style="width: 170px; justify-content: center;">Громадянство</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-citizenship">
                     <option value="">---</option>
@@ -86,7 +94,7 @@
                     {% endfor %}
                 </select>
                 <div class="input-group-prepend" style="padding-left: 5px;">
-                    <div class="input-group-text" style="width: 170px; justify-content: center;">Сімейний стан</div>
+                    <div class="input-group-text styles_span" style="width: 170px; justify-content: center;">Сімейний стан</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-maritalStatus">
                     <option value="">---</option>
@@ -97,7 +105,7 @@
             </div>
             <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                 <div class="input-group-prepend">
-                    <div class="input-group-text" style="width: 170px; justify-content: center;">Освіта</div>
+                    <div class="input-group-text styles_span" style="width: 170px; justify-content: center;">Освіта</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px;" id="field-education">
                     <option value="education">---</option>
@@ -106,7 +114,7 @@
                     {% endfor %}
                 </select>
                 <div class="input-group-prepend" style="padding-left: 5px;">
-                    <div class="input-group-text" style="width: 170px; justify-content: center;">Рідна мова</div>
+                    <div class="input-group-text styles_span" style="width: 170px; justify-content: center;">Рідна мова</div>
                 </div>
                 <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-language">
                     <option value="">---</option>
@@ -115,8 +123,8 @@
                     {% endfor %}
                 </select>
             </div>
-            <div class="p-2 bg-white">
-                <button onclick="register()" type="button" class="btn btn-outline-primary" style="width: 100%">Зарєструватися</button>
+            <div class="p-2">
+                <button onclick="register()" type="button" class="btn btn-outline-warning" style="width: 100%">Зарєструватися</button>
             </div>
         </form>
     </body>
