@@ -88,7 +88,7 @@ def statistics():
 
 @app.route('/statistics/__plot', methods=['GET'])
 def plot():
-    return create_plot(db, request.args["field"]);
+    return create_plot(db, request.args["field"])
 
 
 @app.route('/search/__operation_for', methods=['GET'])
