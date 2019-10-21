@@ -123,7 +123,7 @@ function addFilter() {
     var li = $("<li></li>");
     li.addClass("alert alert-primary d-flex");
     li.attr("id", `filter_${filter_count}`);
-    li.append(`<div id="filter-message" style="display: innline-block; margin-right: 10px;">${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}</div>`);
+    li.append(`<div id="filter-message" style="display: innline-block; margin-right: 10px">${$FIELDS[field]} ${$OP_NAMES[oper]} ${value}</div>`);
     li.append($("<button/>")
         .attr({
             type: "button",
