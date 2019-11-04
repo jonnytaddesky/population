@@ -28,9 +28,9 @@
             <td class="td-table"> {{ rec['name'] }} </td>
             <td class="td-table"> {{ rec['lastName'] }} </td>
             <td class="td-table"> {{ rec['sex'] }} </td>
-            <td class="td-table"> {{ rec['birthdayD'] }} </td>
+            <td class="td-table"> {{ rec['birthdayD'] | int }} </td>
             <td class="td-table"> {{ rec['birthdayM'] }} </td>
-            <td class="td-table"> {{ rec['birthdayY'] }} </td>
+            <td class="td-table"> {{ rec['birthdayY'] | int }} </td>
             <td class="td-table"> {{ rec['citizenship'] }} </td>
             <td class="td-table"> {{ rec['maritalStatus'] }} </td>
             <td class="td-table"> {{ rec['education'] }} </td>
