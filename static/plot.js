@@ -10,13 +10,11 @@ function plot() {
         },
         dataType: "json",
         success: function(data) {
-            Plotly.newPlot("histogram", [
+            Plotly.newPlot("pie", [
                 {
-                    histfunc: "sum",
-                    name: "sum",
-                    x: data["x"],
-                    y: data["y"],
-                    type: "histogram",
+                    labels: data["labels"],
+                    values: data["values"],
+                    type: "pie"
                 }
             ]);
         }

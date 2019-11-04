@@ -7,10 +7,10 @@ import json
 def create_plot(db, field):
     result = db.aggregate([{ "$group": { "_id": "$" + field, "count": { "$sum": 1 }}}])
 
-    json = { "x": [], "y": [] }
+    json = { "labels": [], "values": [] }
 
     for rec in sorted(list(result), key=lambda rec: rec["_id"]):
-        json["x"].append(rec["_id"])
-        json["y"].append(rec["count"])
+        json["labels"].append(rec["_id"])
+        json["values"].append(rec["count"])
 
     return json
