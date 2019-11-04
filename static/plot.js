@@ -14,9 +14,16 @@ function plot() {
                 {
                     labels: data["labels"],
                     values: data["values"],
-                    type: "pie"
+                    type: "pie",
+                    textposition: 'outside'
                 }
-            ]);
+            ],{
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 18,
+                  color: '#000000'
+                }}
+            );
         }
     });
 }
