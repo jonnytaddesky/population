@@ -35,6 +35,7 @@ function register() {
     user_data["education"] = $("#field-education option:selected").val() || null;
     user_data["language"] = $("#field-language option:selected").val() || null;
 
+    
     for (const name of Object.keys(user_data)) {
         if (user_data[name] == null) {
             message("Помилка", "Будь ласка оберіть " + $FIELDS[name]);
@@ -42,12 +43,20 @@ function register() {
         }
     }
 
+    var re = new RegExp("^[а-яА-Я]*$");
+    for (const field_name of ["surname", "name", "lastName"]) {
+        if (!re.test(user_data[field_name])) {
+            message("Помилка", "Використовуйте в полі " + $FIELDS[field_name] + " українські літери!");
+            return;
+        }
+    }
+
     $.post($SCRIPT_ROOT + "/sign_up/__register", user_data, function(data) {
         if (data == "True") {
-            message("Інфо", "Регістрація успішна!")
+            message("Інфо", "Регістрація успішна!");
         }
         else {
-            message("Помилка", "Регістрація не виконана!")
+            message("Помилка", "Регістрація не виконана!");
         }
     });
 }
