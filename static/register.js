@@ -43,7 +43,7 @@ function register() {
         }
     }
 
-    var re = new RegExp("^[іІїЇа-яА-ЯіІїЇ]*$");
+    var re = new RegExp("^[іІїЇа-яА-Я]*$");
     for (const field_name of ["surname", "name", "lastName"]) {
         if (!re.test(user_data[field_name])) {
             message("Помилка", "Використовуйте в полі " + $FIELDS[field_name] + " українські літери!");
