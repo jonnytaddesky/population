@@ -3,10 +3,20 @@
         <title>Аналітична веб система перепису населення</title>
         {% include "header.html" %}
         <style>
-            .jumbotron {
-                padding-top: 120px;
+            #jum{
                 background-color: transparent;
                 color: white;
+                margin: 0;
+                padding: 90px 0 0 0 ;
+            }
+            #jum1{
+                margin: 0px 10px;
+                padding-top: 0px;
+                margin-top: 40px;
+                background-color: rgb(255,255,255,0.8);
+                color: rgb(0,0,0);
+                border-radius: 15px;
+                padding-bottom: 0px;
             }
             .col-xl {
                 color: white;
@@ -23,15 +33,12 @@
             .main {
                 font-weight: bold;
             } 
-            .main-info {
-                margin: 0px 10px;
-                padding-top: 10px;
-                background-color: rgb(255,255,255,0.8);
-                color: rgb(0,0,0);
-                border-radius: 15px;
-                padding-bottom: 30px;
-            }
             .info {
+                font-weight: bold;
+                font-size: 45px;
+            }
+            .info1 {
+                padding-top: 15px;
                 font-weight: bold;
                 font-size: 30px;
             }
@@ -45,23 +52,22 @@
         {% set active = 'index' %}
         {% include "navbar.html" with context %}
         {% endblock %}
-        <div class="jumbotron text-center">
-            <h1 class="main font">ІНФОРМАЦІЙНО-АНАЛІТИЧНА WEB-СИСТЕМА ПЕРЕПИСУ НАСЕЛЕННЯ</br>
-                студентки 1м групи 2 курсу ФОАІС Балашової Аліни</h1> 
+        <div id="jum" class="jumbotron text-center">
+            <h1 class="main font">Вітаємо Вас на сторінці інформаційно-аналітичної <br>
+                Web-системи перепису населення</br>
+                студентки 1м групи 2 курсу ФОАІС <br>
+                Балашової Аліни
         </div> 
-        <div class="jumbotron text-center main-info">
-            <h1 class="main">Загальні положення щодо</br>
-                інформаційно-аналітичної Web-системи перепису населення</h1>
-                <br>
+        <div id="jum1" class="jumbotron text-center main-info">
             <p class="info">
-               <big>ПЕРЕПИС НАСЕЛЕННЯ</big> - періодичне суцільне державне статистичне состереження, що включає в себе збирання<br>
-                демографічних і соціально-економічних даних, які на встановлену дату характеризують<br> чисельність та склад
-                населення країни
+                На основі даних перепису населення будується державне планування,<br>
+                планування проведення реформ, наукові та маркетенгові дослідження. <br>
+                Ваші відповіді важливі для формування об'єктивних даних про населення України.
             </p>
-            <p class="info">
-                Перепис населення відіграє важливу роль. На його основі будується державне планування, планування проведення<br>
-                реформ, наукові та маркетингові дослідження. Тому і створена інформаційно-аналітична Web-система для
-                максимально зручного процесу отримання і обробки статистичних даних по перепису населення. 
+            <p class="info1">
+                * Перепис населення - періодичне суцільне державне статистичне спостереження, що включає в себе збирання<br>
+                демографічних і соціально-економічних даних, які на встановлену дату характеризують чисельність та склад <br>
+                населення країни.
             </p>
         </div>       
     </body>
