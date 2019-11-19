@@ -15,19 +15,19 @@
         }
         .chart {
             align-items: center;
-            height: 700px;
-            width: 1200px;
-            font-size: 30px;
+            height: 500px;
+            width: 1000px;
+            font-size: 10px;
         }
-        .infolayer {
-            font-size: 30px;
-        }
+        /* .infolayer {
+            font-size: 10px;
+        } */
         /* .input-group-lg {
             height: 50px;
         } */
         .form-control.mdb-select.md-form.colorful-select.dropdown-primary {
-            height: 80px;
-            font-size: 30px;
+            /* height: 0px; */
+            font-size: 20px;
         }
     </style>
 </head>
@@ -39,17 +39,17 @@
     {% endblock %}
     <div class="container">
         <br/>
-        <div class="input-group input-group-lg mb-3" style="width: 500px;">
+        <div class="input-group mb-3" style="width: 300px;">
             <div class="input-group-prepend">
-                <div class="input-group-text styles_span" style="font-size: 30px;">Категорія</div>
+                <div class="input-group-text styles_span" style="font-size: 20px;">Категорія</div>
             </div>
             <select class="form-control mdb-select md-form colorful-select dropdown-primary" id="field-select" onchange="plot()">
                 <option value="">---</option>
-                <option value="sex" style="font-size: 30px;">Стать</option>
-                <option value="citizenship" style="font-size: 30px;">Громадянство</option>
-                <option value="maritalStatus" style="font-size: 30px;">Сімейний стан</option>
-                <option value="education" style="font-size: 30px;">Освіта</option>
-                <option value="language" style="font-size: 30px;">Рідна мова</option>
+                <option value="sex" style="font-size: 20px;">Стать</option>
+                <option value="citizenship" style="font-size: 20px;">Громадянство</option>
+                <option value="maritalStatus" style="font-size: 20px;">Сімейний стан</option>
+                <option value="education" style="font-size: 20px;">Освіта</option>
+                <option value="language" style="font-size: 20px;">Рідна мова</option>
             </select>
         </div>
         <div class="chart" id="pie"/>

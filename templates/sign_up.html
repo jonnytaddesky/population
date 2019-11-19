@@ -24,107 +24,107 @@
         {% include "navbar.html" with context %}
         {% endblock %}
         <form style="padding-top: 10px">
-            <div class="input-group mb-3" style="padding-left: 8px; width: 500px;">
+            <div class="input-group mb-3" style="padding-left: 8px; width: 460px;">
                 <div class="input-group-prepend">
-                    <span class="input-group-text styles_span" style="width: 170px; justify-content: center; font-size: 25px;">Прізвище</span>
+                    <span class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Прізвище</span>
                 </div>
-                <input id="field-surname" type="text" class="form-control" style="font-size: 25px;">
+                <input id="field-surname" type="text" class="form-control" style="font-size: 20px;">
             </div>
-            <div class="input-group mb-3" style="padding-left: 8px; width: 500px;">
+            <div class="input-group mb-3" style="padding-left: 8px; width: 460px;">
                 <div class="input-group-prepend">
-                    <span class="input-group-text styles_span" style="width: 170px; justify-content: center; font-size: 25px;">Ім'я</span>
+                    <span class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Ім'я</span>
                 </div>
-                <input id="field-name" type="text" class="form-control" style="font-size: 25px;">
+                <input id="field-name" type="text" class="form-control" style="font-size: 20px;">
             </div>
-            <div class="input-group mb-3" style="padding-left: 8px; width: 500px;">
+            <div class="input-group mb-3" style="padding-left: 8px; width: 460px;">
                 <div class="input-group-prepend">
-                    <span class="input-group-text styles_span" style="width: 170px; justify-content: center; font-size: 25px;">По-батькові</span>
+                    <span class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">По-батькові</span>
                 </div>
-                <input id="field-lastName" type="text" class="form-control" style="font-size: 25px;">
+                <input id="field-lastName" type="text" class="form-control" style="font-size: 20px;">
             </div>
             <div class="input mb-3 pad flex-container" style="width: auto; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                     <div class="input-group-prepend">
-                        <div class="input-group-text styles_span" style="width: 300px; justify-content: center; font-size: 25px;">Стать</div>
+                        <div class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Стать</div>
                     </div>
-                    <select class="form-control mdb-select md-form colorful-select dropdown-primary pad" style="padding-right: 5px; font-size: 25px;" id="field-sex">
+                    <select class="form-control mdb-select md-form colorful-select dropdown-primary pad" style="padding-right: 5px; font-size: 20px;" id="field-sex">
                         <option value="">---</option>
                         {% for sex in sex %}
-                        <option value = "{{sex}}" style="font-size: 25px;">{{sex}}</option>
+                        <option value = "{{sex}}" style="font-size: 20px;">{{sex}}</option>
                         {% endfor %}
                     </select>
                     <div class="input-group-prepend" style="padding-left: 5px;">
-                        <div class="input-group-text styles_span" style="width: 300px; justify-content: center; font-size: 25px;">День народження</div>
+                        <div class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">День народження</div>
                     </div>
-                    <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="font-size: 25px;" id="field-birthdayD">
+                    <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="font-size: 20px;" id="field-birthdayD">
                         <option value="">---</option>
                         {% for birthdayD in birthdayD %}
-                        <option value = "{{birthdayD}}" style="font-size: 25px;">{{birthdayD}}</option>
+                        <option value = "{{birthdayD}}" style="font-size: 20px;">{{birthdayD}}</option>
                         {% endfor %}
                     </select>
                 </div>
             </div>
             <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                 <div class="input-group-prepend">
-                    <div class="input-group-text styles_span" style="width: 300px; justify-content: center; font-size: 25px;">Місяць народження</div>
+                    <div class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Місяць народження</div>
                 </div>
-                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px; font-size: 25px;" id="field-birthdayM">
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px; font-size: 20px;" id="field-birthdayM">
                     <option value="">---</option>
                     {% for birthdayM in birthdayM %}
-                    <option value = "{{birthdayM}}" style="font-size: 25px;">{{birthdayM}}</option>
+                    <option value = "{{birthdayM}}" style="font-size: 20px;">{{birthdayM}}</option>
                     {% endfor %}
                 </select>
                 <div class="input-group-prepend" style="padding-left: 5px;">
-                    <div class="input-group-text styles_span" style="width: 300px; justify-content: center; font-size: 25px;">Рік народження</div>
+                    <div class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Рік народження</div>
                 </div>
-                <select class="form-control mdb-select md-form colorful-select dropdown-primary"  style="font-size: 25px;" id="field-birthdayY">
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary"  style="font-size: 20px;" id="field-birthdayY">
                     <option value="">---</option>
                     {% for birthdayY in birthdayY %}
-                    <option value = "{{birthdayY}}" style="font-size: 25px;">{{birthdayY}}</option>
+                    <option value = "{{birthdayY}}" style="font-size: 20px;">{{birthdayY}}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                 <div class="input-group-prepend">
-                    <div class="input-group-text styles_span" style="width: 300px; justify-content: center; font-size: 25px;">Громадянство</div>
+                    <div class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Громадянство</div>
                 </div>
-                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px; font-size: 25px;" id="field-citizenship">
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px; font-size: 20px;" id="field-citizenship">
                     <option value="">---</option>
                     {% for citizenship in citizenship %}
-                    <option value = "{{citizenship}}" style="font-size: 25px;">{{citizenship}}</option>
+                    <option value = "{{citizenship}}" style="font-size: 20px;">{{citizenship}}</option>
                     {% endfor %}
                 </select>
                 <div class="input-group-prepend" style="padding-left: 5px;">
-                    <div class="input-group-text styles_span" style="width: 300px; justify-content: center; font-size: 25px;">Сімейний стан</div>
+                    <div class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Сімейний стан</div>
                 </div>
-                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="font-size: 25px;" id="field-maritalStatus">
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="font-size: 20px;" id="field-maritalStatus">
                     <option value="">---</option>
                     {% for maritalStatus in maritalStatus %}
-                    <option value = "{{maritalStatus}}" style="font-size: 25px;">{{maritalStatus}}</option>
+                    <option value = "{{maritalStatus}}" style="font-size: 20px;">{{maritalStatus}}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="input mb-3 pad flex-container" style="width: 100%; padding-top: 10px; padding-left: 8px; padding-right: 8px;">
                 <div class="input-group-prepend">
-                    <div class="input-group-text styles_span" style="width: 300px; justify-content: center; font-size: 25px;">Освіта</div>
+                    <div class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Освіта</div>
                 </div>
-                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px; font-size: 25px;" id="field-education">
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="padding-left: 5px; font-size: 20px;" id="field-education">
                     <option value="education">---</option>
                     {% for education in education %}
-                    <option value = "{{education}}" style="font-size: 25px;">{{education}}</option>
+                    <option value = "{{education}}" style="font-size: 20px;">{{education}}</option>
                     {% endfor %}
                 </select>
                 <div class="input-group-prepend" style="padding-left: 5px;">
-                    <div class="input-group-text styles_span" style="width: 300px; justify-content: center; font-size: 25px;">Рідна мова</div>
+                    <div class="input-group-text styles_span" style="width: 200px; justify-content: center; font-size: 20px;">Рідна мова</div>
                 </div>
-                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="font-size: 25px;" id="field-language">
+                <select class="form-control mdb-select md-form colorful-select dropdown-primary" style="font-size: 20px;" id="field-language">
                     <option value="">---</option>
                     {% for language in language %}
-                    <option value = "{{language}}" style="font-size: 25px;">{{language}}</option>
+                    <option value = "{{language}}" style="font-size: 20px;">{{language}}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="p-2">
-                <button onclick="register()" type="button" class="btn-lg btn-primary" style="width: 100%; margin-top: 15px; font-size: 25px;" >Зарєструватися</button>
+                <button onclick="register()" type="button" class="btn-lg btn-primary" style="width: 100%; margin-top: 15px; font-size: 20px;" >Зарєструватися</button>
             </div>
         </form>
     </body>
