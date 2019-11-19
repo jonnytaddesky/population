@@ -20,7 +20,7 @@ function plot() {
             ],{
                 font: {
                   family: 'Courier New, monospace',
-                  size: 25,
+                  size: 15,
                   color: '#000000'
                 }}
             );
